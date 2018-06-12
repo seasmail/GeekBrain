@@ -1,0 +1,20 @@
+function pow(x, n) {
+  var result = x;
+
+  for (var i = 1; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+
+var a = process.argv[2], 
+    b =process.argv[3] , 
+    sum = 0;
+
+for (var i = 1 ; i <= b; i++){
+  sum +=pow(i, i);
+}
+
+process.stdout.write(sum);
