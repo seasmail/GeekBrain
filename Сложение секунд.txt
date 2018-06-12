@@ -1,0 +1,42 @@
+var a = process.argv[2], 
+    b = process.argv[3], 
+    sum = a+b, 
+    sec = 0,
+    min = 0, 
+    hour = 0;
+
+if (sum >= 60){
+  sec = sum%60;
+  var ost = Math.floor(sum/60);
+  if (ost>=60){
+    min = ost%60;
+    hour = Math.floor(ost/60);
+  }
+}
+
+ console.log(hour + " " 
+            + Math.floor(min) 
+            + " " + Math.floor(sec));
+
+if (sec === 0){
+  sec = "";
+}
+if (min === 0){
+  min = "";
+}
+if (hour === 0){
+  hour = "";
+} else {
+  if (hour === 1){
+    hour = "1 час";
+  } else {
+    if (hour >1 && hour <5){
+      hour = "" + hour + "часа";
+    } else hour = "" + hour + "часов"; 
+    
+  }
+}
+
+ console.log(hour + " " 
+            + Math.floor(min) 
+            + " минут " + Math.floor(sec) + " секунд");
